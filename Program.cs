@@ -36,18 +36,63 @@
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
-int size = 4;
+// int size = 4;
+// int[] numbers = new int[size];
+// FillArrayRandomNumbers(numbers);
+// PrintArray(numbers);
+
+// int sumNumbersEvenIndex = 0;
+
+// for (int i = 1; i < numbers.Length; i += 2)
+// {
+//     sumNumbersEvenIndex += numbers[i];
+// }
+// Console.Write(sumNumbersEvenIndex);
+
+
+
+// void FillArrayRandomNumbers(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(-100, 101);
+//     }
+// }
+
+// void PrintArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+int size = 10;
 int[] numbers = new int[size];
 FillArrayRandomNumbers(numbers);
 PrintArray(numbers);
 
-int sumNumbersEvenIndex = 0;
+int max = numbers[0];
+int min = numbers[0];
 
-for (int i = 1; i < numbers.Length; i += 2)
+for (int i = 0; i < numbers.Length; i++)
 {
-    sumNumbersEvenIndex += numbers[i];
+    if (numbers[i] > max)
+    {
+        max = numbers[i];
+    }
+    else if (numbers[i] < min)
+    {
+        min = numbers[i];
+    }
 }
-Console.Write(sumNumbersEvenIndex);
+
+Console.WriteLine($"Минимальное число: {min}");
+Console.WriteLine($"Минимальное число: {max}");
+Console.WriteLine($"Разница между максимальным и минимальным числами: {max-min}");
 
 
 
@@ -55,9 +100,10 @@ void FillArrayRandomNumbers(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(-100, 101);
+        array[i] = new Random().Next(1, 555);
     }
 }
+
 
 void PrintArray(int[] array)
 {
